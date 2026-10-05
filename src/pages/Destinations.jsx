@@ -1,3 +1,4 @@
+import { galleries, photo } from '../data/media.js'
 import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
@@ -10,7 +11,7 @@ export default function Destinations() {
   useSEO('Destinations', 'Serengeti, Kilimanjaro, Ngorongoro, Zanzibar, Tarangire and Nyerere: explore Tanzania’s great destinations.')
   return (
     <>
-      <PageHero title="Destinations" sub="Six places that define Tanzania, each with a story of its own." image="/images/serengeti.jpg" tone={['#B98A3E', '#0B241B']} />
+      <PageHero title="Destinations" sub="Six places that define Tanzania, each with a story of its own." image={photo['serengeti']} tone={['#B98A3E', '#0B241B']} />
       <section className="bg-cream py-24">
         <Wrap className="grid gap-5 md:grid-cols-2">
           {destinations.map(d => <Reveal key={d.slug}><DestinationTile d={d} cls="aspect-[4/3] w-full" /></Reveal>)}
@@ -29,7 +30,7 @@ export function DestinationDetail() {
   if (!d) return (
     <Wrap className="py-48 text-center"><h1 className="text-6xl text-deep">Destination not found</h1><div className="mt-8"><Btn to="/destinations" variant="dark">All destinations</Btn></div></Wrap>
   )
-  const gallery = [1, 2, 3].map(n => ({ src: d.image.replace('.jpg', `-${n}.jpg`), tone: d.tone, alt: `${d.name} view ${n}` }))
+  const gallery = (galleries[d.slug] || []).slice(0, 6).map(g => ({ ...g, tone: d.tone }))
   return (
     <>
       <PageHero title={d.name} sub={d.tagline} image={d.image} tone={d.tone} />

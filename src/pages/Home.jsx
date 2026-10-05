@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import PageHero from '../components/PageHero';
-import MediaImage from '../components/MediaImage';
-import { pages, videos, coverFor } from '../data/media';
 import { ArrowRight, ArrowDown, Compass, Sparkles, Leaf, Handshake, MapPin, Quote } from 'lucide-react'
 import { Btn, Heading, Img, ParallaxImg, Reveal, Wrap, useSEO } from '../components/ui.jsx'
+import VideoBackground from '../components/VideoBackground.jsx'
+import { photo, videos } from '../data/media.js'
 import { destinations } from '../data/destinations.js'
 import { experiences, safaris, journal, testimonials, why } from '../data/content.js'
 
@@ -15,7 +14,9 @@ function Hero() {
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden bg-deep text-cream">
       <motion.div className="absolute inset-0" initial={{ scale: 1.18 }} animate={{ scale: 1 }} transition={{ duration: 2.6, ease: 'easeOut' }}>
-        <Img src="/images/hero.jpg" tone={['#B98A3E', '#0B241B']} zoom={false} alt="Acacia trees on the Serengeti at sunrise" className="h-full w-full" />
+        {videos.home.src
+          ? <VideoBackground src={videos.home.src} poster={videos.home.poster} />
+          : <Img src={photo['hero']} tone={['#B98A3E', '#0B241B']} zoom={false} alt="Wildlife crossing the Serengeti plains" className="h-full w-full" />}
       </motion.div>
       <div className="absolute inset-0 bg-gradient-to-b from-deep/60 via-deep/20 to-deep/90" />
       <Wrap className="relative pt-24">
@@ -114,7 +115,7 @@ function Migration() {
   const meta = [['Best time', 'June to October'], ['Location', 'Serengeti, Northern Tanzania'], ['Duration', '5 to 8 days'], ['Experience', 'Wildlife safari']]
   return (
     <section className="relative overflow-hidden bg-deep text-cream">
-      <ParallaxImg src="/images/migration.jpg" tone={['#B98A3E', '#1a1208']} alt="Wildebeest crossing the Serengeti" className="absolute inset-0" />
+      <ParallaxImg src={photo['migration']} tone={['#B98A3E', '#1a1208']} alt="Wildebeest crossing the Serengeti" className="absolute inset-0" />
       <div className="absolute inset-0 bg-deep/60" />
       <Wrap className="relative py-32 md:py-48">
         <Reveal><h2 className="max-w-3xl text-5xl uppercase md:text-8xl">The Great Migration</h2></Reveal>
@@ -238,7 +239,7 @@ function Testimonials() {
 export function FinalCTA() {
   return (
     <section className="relative overflow-hidden bg-deep py-32 text-center text-cream md:py-48">
-      <Img src="/images/cta.jpg" tone={['#B98A3E', '#0B241B']} zoom={false} className="absolute inset-0 opacity-60" />
+      <Img src={photo['cta']} tone={['#B98A3E', '#0B241B']} zoom={false} className="absolute inset-0 opacity-60" />
       <div className="absolute inset-0 bg-deep/55" />
       <Wrap className="relative">
         <Reveal><h2 className="mx-auto max-w-4xl text-5xl uppercase md:text-8xl">Your Tanzania adventure starts here.</h2></Reveal>
@@ -254,8 +255,8 @@ export default function Home() {
   return (
     <>
       <Hero /><Statement /><Destinations /><Experiences /><Migration /><Safaris />
-      <Feature dark image="/images/kilimanjaro.jpg" tone={['#8FA3B8', '#16222f']} title="Stand above Africa" text="Challenge yourself to reach the roof of Africa." list={['Machame Route', 'Marangu Route', 'Lemosho Route', 'Rongai Route']} cta="Explore Kilimanjaro" to="/kilimanjaro" />
-      <Feature image="/images/zanzibar.jpg" tone={['#2f7f84', '#0b343a']} title="From savannah to sea" text="White sand beaches, Stone Town, spice farms and the warm Indian Ocean." list={['Diving and snorkelling', 'Spice experiences', 'Romantic escapes']} cta="Explore Zanzibar" to="/zanzibar" />
+      <Feature dark image={photo['kilimanjaro']} tone={['#8FA3B8', '#16222f']} title="Stand above Africa" text="Challenge yourself to reach the roof of Africa." list={['Machame Route', 'Marangu Route', 'Lemosho Route', 'Rongai Route']} cta="Explore Kilimanjaro" to="/kilimanjaro" />
+      <Feature image={photo['zanzibar']} tone={['#2f7f84', '#0b343a']} title="From savannah to sea" text="White sand beaches, Stone Town, spice farms and the warm Indian Ocean." list={['Diving and snorkelling', 'Spice experiences', 'Romantic escapes']} cta="Explore Zanzibar" to="/zanzibar" />
       <Why /><Story /><JournalPreview /><Testimonials /><FinalCTA />
     </>
   )

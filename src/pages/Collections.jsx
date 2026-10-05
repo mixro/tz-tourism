@@ -2,13 +2,14 @@ import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { Btn, Img, PageHero, Reveal, Wrap, useSEO } from '../components/ui.jsx'
 import { experiences, safaris } from '../data/content.js'
+import { photo, videos } from '../data/media.js'
 import { FinalCTA } from './Home.jsx'
 
-function Collection({ items, title, sub, hero, tone, seo, linkTo }) {
+function Collection({ items, title, sub, hero, tone, seo, linkTo, video }) {
   useSEO(seo, sub)
   return (
     <>
-      <PageHero title={title} sub={sub} image={hero} tone={tone} />
+      <PageHero title={title} sub={sub} image={hero} tone={tone} video={video} />
       <section className="bg-cream py-24">
         <Wrap className="grid gap-x-8 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
           {items.map((e, i) => (
@@ -30,8 +31,8 @@ function Collection({ items, title, sub, hero, tone, seo, linkTo }) {
 }
 
 export const Experiences = () => (
-  <Collection items={experiences} title="Experiences beyond ordinary" sub="Nine ways to travel Tanzania, each built around what you love." seo="Experiences" hero="/images/exp-wildlife.jpg" tone={['#B98A3E', '#0B241B']} />
+  <Collection items={experiences} title="Experiences beyond ordinary" sub="Nine ways to travel Tanzania, each built around what you love." seo="Experiences" hero={photo['exp-wildlife']} tone={['#B98A3E', '#0B241B']} />
 )
 export const Safaris = () => (
-  <Collection items={safaris} linkTo="/contact?type=Safari" title="Into the wild" sub="Choose the safari that suits your pace, your party and your passion." seo="Safaris" hero="/images/safari-classic.jpg" tone={['#B98A3E', '#0B241B']} />
+  <Collection items={safaris} linkTo="/contact?type=Safari" title="Into the wild" sub="Choose the safari that suits your pace, your party and your passion." seo="Safaris" hero={photo['safari-classic']} tone={['#B98A3E', '#0B241B']} video={videos.safaris} />
 )

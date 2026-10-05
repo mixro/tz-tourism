@@ -20,12 +20,12 @@ export default function Gallery({ items = [] }) {
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
         {items.map((item, i) => (
           <button
             key={item.src + i}
             onClick={() => setActive(item)}
-            className="group overflow-hidden rounded-xl"
+            className="group block overflow-hidden"
             aria-label={`Open photo: ${item.alt}`}
           >
             <MediaImage
@@ -45,10 +45,10 @@ export default function Gallery({ items = [] }) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setActive(null)}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-[#0B241B]/95 p-6"
+            className="fixed inset-0 z-[70] flex items-center justify-center bg-black/90 p-6"
           >
             <button
-              className="absolute right-6 top-6 text-[#F8F5EE]"
+              className="absolute right-6 top-6 text-white"
               onClick={() => setActive(null)}
               aria-label="Close"
             >
@@ -57,7 +57,7 @@ export default function Gallery({ items = [] }) {
             <img
               src={active.src}
               alt={active.alt}
-              className="max-h-[85vh] max-w-full rounded-xl object-contain"
+              className="max-h-[85vh] max-w-full object-contain"
             />
           </motion.div>
         )}

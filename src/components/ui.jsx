@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
+import VideoBackground from './VideoBackground.jsx'
 
 export function useSEO(title, description) {
   useEffect(() => {
@@ -11,7 +12,7 @@ export function useSEO(title, description) {
   }, [title, description])
 }
 
-// Photo with gradient fallback until a real file exists in /public/images.
+// Photo with a gradient fallback (the `tone` colours) shown if the image fails to load.
 export function Img({ src, tone = ['#2c5a43', '#0B241B'], alt = '', className = '', zoom = true }) {
   const [bad, setBad] = useState(false)
   return (
@@ -60,10 +61,12 @@ export const Heading = ({ title, children, light, className = '' }) => (
   </div>
 )
 
-export function PageHero({ title, sub, image, tone }) {
+export function PageHero({ title, sub, image, tone, video }) {
   return (
     <section className="relative flex min-h-[70vh] items-end overflow-hidden bg-deep text-cream">
-      <Img src={image} tone={tone} zoom={false} className="absolute inset-0" />
+      {video?.src
+        ? <VideoBackground src={video.src} poster={video.poster || image} />
+        : <Img src={image} tone={tone} zoom={false} className="absolute inset-0" />}
       <div className="absolute inset-0 bg-gradient-to-t from-deep via-deep/40 to-deep/30" />
       <div className="relative mx-auto w-full max-w-[1320px] px-6 pb-16 pt-40 md:px-10">
         <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}

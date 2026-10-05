@@ -1,13 +1,15 @@
 import { MapPin } from 'lucide-react'
 import { Btn, Heading, PageHero, Reveal, Wrap, useSEO } from '../components/ui.jsx'
 import { features } from '../data/content.js'
+import { galleries, videos } from '../data/media.js'
+import Gallery from '../components/Gallery.jsx'
 import { FinalCTA } from './Home.jsx'
 
-function Feature({ f }) {
+function Feature({ f, slug }) {
   useSEO(f.seo, f.intro)
   return (
     <>
-      <PageHero title={f.title} sub={f.sub} image={f.image} tone={f.tone} />
+      <PageHero title={f.title} sub={f.sub} image={f.image} tone={f.tone} video={videos[slug]} />
       <section className="bg-cream py-24">
         <Wrap className="max-w-4xl"><Reveal><p className="font-display text-3xl leading-snug text-forest md:text-5xl">{f.intro}</p></Reveal></Wrap>
       </section>
@@ -28,9 +30,15 @@ function Feature({ f }) {
           <div className="mt-12"><Btn to={`/contact?type=${encodeURIComponent(f.type)}`} variant="dark">{f.cta}</Btn></div>
         </Wrap>
       </section>
+      <section className="bg-deep py-24">
+        <Wrap>
+          <Heading light title="Gallery" />
+          <div className="mt-10"><Gallery items={galleries[slug]} /></div>
+        </Wrap>
+      </section>
       <FinalCTA />
     </>
   )
 }
-export const Kilimanjaro = () => <Feature f={features.kilimanjaro} />
-export const Zanzibar = () => <Feature f={features.zanzibar} />
+export const Kilimanjaro = () => <Feature f={features.kilimanjaro} slug="kilimanjaro" />
+export const Zanzibar = () => <Feature f={features.zanzibar} slug="zanzibar" />

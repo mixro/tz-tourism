@@ -1,9 +1,11 @@
-// Photos: drop files into /public/images (e.g. serengeti.jpg). Until then, `tone` gradients show.
+// Photos come from src/data/media.js (online Unsplash demo images). `tone` is the gradient shown if a photo fails to load.
+import { photo } from './media.js'
+
 export const destinations = [
   {
     name: 'Serengeti', slug: 'serengeti', tagline: 'Where the wild still moves freely.',
     description: 'Wildlife, migration and endless savannah.', location: 'Northern Tanzania',
-    image: '/images/serengeti.jpg', tone: ['#B98A3E', '#2e2010'],
+    image: photo['serengeti'], tone: ['#B98A3E', '#2e2010'],
     intro: 'Two million animals, one horizon. The Serengeti is the great theatre of East Africa, where grass, predators and the seasons set the schedule.',
     why: ['The world’s largest land migration', 'Big cats in open country', 'Sunrise balloon flights over the plains'],
     wildlife: ['Lion', 'Leopard', 'Cheetah', 'Elephant', 'Wildebeest', 'Zebra'],
@@ -17,7 +19,7 @@ export const destinations = [
   {
     name: 'Mount Kilimanjaro', slug: 'kilimanjaro', tagline: 'Africa’s roof, above the clouds.',
     description: 'Africa’s highest mountain.', location: 'Kilimanjaro Region',
-    image: '/images/kilimanjaro.jpg', tone: ['#8FA3B8', '#16222f'],
+    image: photo['kilimanjaro'], tone: ['#8FA3B8', '#16222f'],
     intro: 'Rainforest, moorland, alpine desert and a glacier-capped summit at 5,895 metres. Kilimanjaro is a climb through every climate on Earth.',
     why: ['The highest free-standing mountain in the world', 'Five ecological zones in one trek', 'No technical climbing required'],
     wildlife: ['Colobus monkey', 'Blue monkey', 'Augur buzzard', 'Elephant (lower slopes)'],
@@ -31,7 +33,7 @@ export const destinations = [
   {
     name: 'Ngorongoro', slug: 'ngorongoro', tagline: 'A world inside a crater.',
     description: 'A spectacular natural crater and wildlife sanctuary.', location: 'Northern Tanzania',
-    image: '/images/ngorongoro.jpg', tone: ['#5f7d4a', '#10221a'],
+    image: photo['ngorongoro'], tone: ['#5f7d4a', '#10221a'],
     intro: 'The largest intact volcanic caldera on Earth holds a self-contained world: grassland, forest, soda lake and some of the densest wildlife in Africa.',
     why: ['Reliable sightings of black rhino', 'A 600-metre rim with sweeping views', 'Maasai pastoral culture on the highlands'],
     wildlife: ['Black rhino', 'Lion', 'Hippo', 'Flamingo', 'Hyena', 'Buffalo'],
@@ -42,7 +44,7 @@ export const destinations = [
   {
     name: 'Zanzibar', slug: 'zanzibar', tagline: 'Where Africa meets the Indian Ocean.',
     description: 'Tropical beaches, culture and Indian Ocean experiences.', location: 'Indian Ocean coast',
-    image: '/images/zanzibar.jpg', tone: ['#2f7f84', '#0b343a'],
+    image: photo['zanzibar'], tone: ['#2f7f84', '#0b343a'],
     intro: 'Carved doors, spice markets and white sand. Zanzibar’s history of traders and sailors still shapes its food, music and pace.',
     why: ['A UNESCO-listed Stone Town', 'Warm, clear water for diving and snorkelling', 'A blend of Swahili, Arab and Indian culture'],
     wildlife: ['Red colobus monkey', 'Dolphins', 'Sea turtles', 'Reef fish'],
@@ -53,7 +55,7 @@ export const destinations = [
   {
     name: 'Tarangire', slug: 'tarangire', tagline: 'Elephants under ancient baobabs.',
     description: 'Elephants, baobabs and spectacular landscapes.', location: 'Manyara Region',
-    image: '/images/tarangire.jpg', tone: ['#a8683a', '#33190c'],
+    image: photo['tarangire'], tone: ['#a8683a', '#33190c'],
     intro: 'In the dry season the Tarangire River draws elephants by the hundred. Baobab trees, some over a thousand years old, watch over the gathering.',
     why: ['One of Africa’s largest elephant concentrations', 'Giant baobab landscapes', 'Quieter than the northern circuit’s headline parks'],
     wildlife: ['Elephant', 'Giraffe', 'Lion', 'Python', 'Fringe-eared oryx', 'Over 500 bird species'],
@@ -64,7 +66,7 @@ export const destinations = [
   {
     name: 'Nyerere', slug: 'nyerere', tagline: 'Wild rivers and open water.',
     description: 'Wild rivers, forests and extraordinary wildlife.', location: 'Southern Tanzania',
-    image: '/images/nyerere.jpg', tone: ['#4c7a52', '#0e2417'],
+    image: photo['nyerere'], tone: ['#4c7a52', '#0e2417'],
     intro: 'The Rufiji River winds through Nyerere, Africa’s largest game reserve turned national park. Here you explore by boat and on foot as well as by vehicle.',
     why: ['Boat safaris among hippo and crocodile', 'Walking safaris with armed rangers', 'Far fewer visitors than the north'],
     wildlife: ['African wild dog', 'Hippo', 'Crocodile', 'Elephant', 'Giraffe', 'Fish eagle'],

@@ -3,13 +3,14 @@ import { useSearchParams } from 'react-router-dom'
 import { CheckCircle2 } from 'lucide-react'
 import { Btn, Heading, Img, PageHero, Reveal, Wrap, useSEO } from '../components/ui.jsx'
 import { journal, why } from '../data/content.js'
+import { photo } from '../data/media.js'
 import { FinalCTA } from './Home.jsx'
 
 export function About() {
   useSEO('About', 'CHONG ADVENTURE is a Tanzanian adventure company designing journeys with local knowledge and authentic experiences.')
   return (
     <>
-      <PageHero title="About CHONG ADVENTURE" sub="Discover Tanzania. Live the adventure." image="/images/about.jpg" tone={['#3b5a46', '#0B241B']} />
+      <PageHero title="About CHONG ADVENTURE" sub="Discover Tanzania. Live the adventure." image={photo['about']} tone={['#3b5a46', '#0B241B']} />
       <section className="bg-cream py-24">
         <Wrap className="max-w-4xl space-y-8">
           <Reveal><p className="font-display text-3xl leading-snug text-forest md:text-5xl">CHONG ADVENTURE exists to help travelers experience the extraordinary diversity of Tanzania.</p></Reveal>
@@ -33,7 +34,7 @@ export function Journal() {
   useSEO('Journal', 'Stories, guides and planning advice for traveling in Tanzania.')
   return (
     <>
-      <PageHero title="Stories from Tanzania" sub="Guides, field notes and planning advice from our team." image="/images/j-serengeti.jpg" tone={['#B98A3E', '#0B241B']} />
+      <PageHero title="Stories from Tanzania" sub="Guides, field notes and planning advice from our team." image={photo['j-serengeti']} tone={['#B98A3E', '#0B241B']} />
       <section className="bg-cream py-24">
         <Wrap className="grid gap-x-8 gap-y-16 md:grid-cols-2">
           {journal.map(a => (
@@ -89,7 +90,7 @@ export function Contact() {
 
   return (
     <>
-      <PageHero title="Plan your adventure" sub="Tell us what you dream of discovering. We’ll reply within two working days." image="/images/cta.jpg" tone={['#B98A3E', '#0B241B']} />
+      <PageHero title="Plan your adventure" sub="Tell us what you dream of discovering. We’ll reply within two working days." image={photo['cta']} tone={['#B98A3E', '#0B241B']} />
       <section className="bg-cream py-24">
         <Wrap className="max-w-3xl">
           {sent ? (

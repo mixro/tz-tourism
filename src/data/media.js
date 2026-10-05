@@ -1,107 +1,123 @@
 // Central media library for CHONG ADVENTURE (demo site).
-// All photos come from Unsplash (free under the Unsplash License).
-// Swap any ID or URL here and every page updates automatically.
+// Photos come from Unsplash (free under the Unsplash License).
+// Change an ID here and every page that uses it updates.
 
 export const unsplash = (id, w = 1200) =>
-  `https://unsplash.com/photos/${id}/download?force=true&w=${w}`;
+  `https://unsplash.com/photos/${id}/download?force=true&w=${w}`
 
-const U = unsplash;
+const U = unsplash
+
+// Photo IDs (reused across the site where the demo has fewer photos than slots)
+const ID = {
+  migration: 'H1THPgRuKg0',   // wildebeest crossing, Serengeti
+  leopard: 'IYMeU7G3L4E',     // leopard in a tree, Serengeti
+  elephants: 'FmUx8z_Tz4A',   // elephants, Serengeti
+  wildebeest: 'ZaMYDt6FE58',  // wildebeest grazing, Serengeti
+  gazelle: 'Y2fRDPQyAj4',     // gazelle, Serengeti
+  rongai: 'DDEBAl7ULAo',      // hikers on the Rongai route
+  kiliMoshi: 'KDQ6D6V5RtM',   // Kilimanjaro from Moshi
+  kiliPlains: 'NZHU5vfPo3M',  // elephants on the plains below Kilimanjaro
+  coast: 'VqxfYDgg8RQ',       // aerial Zanzibar coast
+  hammock: 'G4zORfstMW0',     // hammock between palms, Zanzibar
+  stoneTown: 'nkLfKiCf3EQ',   // Stone Town from above
+  kite: '3WsA4s8XAMI',        // kitesurfer at Paje
+  bwejuu: 'EM8-MJSBRWs',      // Bwejuu village from above
+  palms: '0DDEIeraxMU',       // Stone Town waterfront and palms
+  crater: '46wm-yYcYEs',      // elephants, Ngorongoro Crater
+  highlands: 'mYiFarnp-ko',   // Ngorongoro highlands
+  tarangire: 'AtYVjxDqlPI',   // elephant, Tarangire
+}
+
+// ---------- Photos used by the data files, keyed by the old /images/<name>.jpg ----------
+export const photo = {
+  // page heroes and sections
+  hero: U(ID.migration, 1800),
+  migration: U(ID.wildebeest, 1800),
+  cta: U(ID.hammock, 1800),
+  about: U(ID.highlands, 1800),
+  // destinations (tile + page hero)
+  serengeti: U(ID.elephants, 1600),
+  kilimanjaro: U(ID.kiliMoshi, 1600),
+  ngorongoro: U(ID.crater, 1600),
+  zanzibar: U(ID.coast, 1600),
+  tarangire: U(ID.tarangire, 1600),
+  nyerere: U(ID.leopard, 1600), // TODO: placeholder, swap for a Nyerere / Selous photo
+  // experiences
+  'exp-wildlife': U(ID.leopard, 900),
+  'exp-trek': U(ID.rongai, 900),
+  'exp-zanzibar': U(ID.stoneTown, 900),
+  'exp-culture': U(ID.bwejuu, 900),
+  'exp-honeymoon': U(ID.hammock, 900),
+  'exp-family': U(ID.gazelle, 900),
+  'exp-photo': U(ID.wildebeest, 900),
+  'exp-luxury': U(ID.palms, 900),
+  'exp-combo': U(ID.kite, 900),
+  // safaris
+  'safari-classic': U(ID.wildebeest, 900),
+  'safari-luxury': U(ID.highlands, 900),
+  'safari-family': U(ID.gazelle, 900),
+  'safari-photo': U(ID.leopard, 900),
+  'safari-private': U(ID.crater, 900),
+  'safari-adventure': U(ID.tarangire, 900),
+  // journal covers
+  'j-serengeti': U(ID.elephants, 900),
+  'j-kili': U(ID.rongai, 900),
+  'j-zanzibar': U(ID.stoneTown, 900),
+  'j-migration': U(ID.migration, 900),
+  'j-parks': U(ID.tarangire, 900),
+  'j-first': U(ID.gazelle, 900),
+}
+
+// ---------- Destination galleries (keys match route slugs) ----------
+// Some parks have few photos in this demo, so northern-circuit wildlife shots fill the grid.
+const northern = [
+  { src: U(ID.elephants), alt: 'Elephants on the northern-circuit plains' },
+  { src: U(ID.wildebeest), alt: 'Wildebeest grazing in open savannah' },
+  { src: U(ID.gazelle), alt: 'Gazelle in dry grass' },
+]
+
+export const galleries = {
+  serengeti: [
+    { src: U(ID.wildebeest), alt: 'Wildebeest grazing in the Serengeti' },
+    { src: U(ID.leopard), alt: 'Leopard resting in a tree' },
+    { src: U(ID.elephants), alt: 'Elephants on the Serengeti plains' },
+    { src: U(ID.gazelle), alt: 'Gazelle in dry grass' },
+    { src: U(ID.migration), alt: 'Wildebeest crossing the plains' },
+  ],
+  kilimanjaro: [
+    { src: U(ID.rongai), alt: 'Hikers on the Rongai route' },
+    { src: U(ID.kiliMoshi), alt: 'Kilimanjaro rising above Moshi' },
+    { src: U(ID.kiliPlains), alt: 'Elephants on the plains below Kilimanjaro' },
+  ],
+  zanzibar: [
+    { src: U(ID.coast), alt: 'Aerial view of the Zanzibar coast' },
+    { src: U(ID.hammock), alt: 'Hammock between palm trees' },
+    { src: U(ID.stoneTown), alt: 'Stone Town from above' },
+    { src: U(ID.kite), alt: 'Kitesurfer at Paje Beach' },
+    { src: U(ID.bwejuu), alt: 'Bwejuu village from above' },
+    { src: U(ID.palms), alt: 'Stone Town waterfront and palms' },
+  ],
+  ngorongoro: [
+    { src: U(ID.crater), alt: 'Elephant herd in Ngorongoro Crater' },
+    { src: U(ID.highlands), alt: 'Clouds over the Ngorongoro highlands' },
+    { src: U(ID.elephants), alt: 'Elephants on the northern-circuit plains' },
+  ],
+  tarangire: [
+    { src: U(ID.tarangire), alt: 'Elephant in Tarangire National Park' },
+    ...northern.slice(0, 2),
+  ],
+  nyerere: [
+    { src: U(ID.leopard), alt: 'Leopard (placeholder for Nyerere)' },
+    ...northern.slice(1),
+  ],
+}
 
 // ---------- Videos ----------
-// Add direct .mp4 links (e.g. from Pexels, Mixkit or Coverr) in `src`.
-// While `src` is empty, <VideoBackground /> automatically shows the poster image.
+// Paste a direct .mp4 link (or a file in /public/videos) into `src` to turn a hero into a video.
+// While `src` is empty the poster photo is shown.
 export const videos = {
-  home: { src: '', poster: U('H1THPgRuKg0', 1600) },
-  safaris: { src: '', poster: U('ZaMYDt6FE58', 1600) },
-  kilimanjaro: { src: '', poster: U('DDEBAl7ULAo', 1600) },
-  zanzibar: { src: '', poster: U('VqxfYDgg8RQ', 1600) },
-};
-
-// ---------- Destinations (keys match the route slugs) ----------
-export const destinations = {
-  serengeti: {
-    cover: U('H1THPgRuKg0', 900),
-    hero: U('H1THPgRuKg0', 1800),
-    gallery: [
-      { src: U('ZaMYDt6FE58'), alt: 'Wildebeest grazing in the Serengeti' },
-      { src: U('IYMeU7G3L4E'), alt: 'Leopard resting in a tree' },
-      { src: U('FmUx8z_Tz4A'), alt: 'Elephants on the Serengeti plains' },
-      { src: U('Y2fRDPQyAj4'), alt: 'Gazelle in dry grass' },
-    ],
-  },
-  kilimanjaro: {
-    cover: U('DDEBAl7ULAo', 900),
-    hero: U('DDEBAl7ULAo', 1800),
-    gallery: [
-      { src: U('DDEBAl7ULAo'), alt: 'Hikers on the Rongai route' },
-      { src: U('KDQ6D6V5RtM'), alt: 'Kilimanjaro rising above Moshi' },
-    ],
-  },
-  zanzibar: {
-    cover: U('VqxfYDgg8RQ', 900),
-    hero: U('VqxfYDgg8RQ', 1800),
-    gallery: [
-      { src: U('VqxfYDgg8RQ'), alt: 'Aerial view of the Zanzibar coast' },
-      { src: U('G4zORfstMW0'), alt: 'Hammock between palm trees' },
-      { src: U('nkLfKiCf3EQ'), alt: 'Stone Town from above' },
-      { src: U('3WsA4s8XAMI'), alt: 'Kitesurfer at Paje Beach' },
-      { src: U('EM8-MJSBRWs'), alt: 'Bwejuu village from above' },
-    ],
-  },
-  ngorongoro: {
-    cover: U('46wm-yYcYEs', 900),
-    hero: U('46wm-yYcYEs', 1800),
-    gallery: [
-      { src: U('46wm-yYcYEs'), alt: 'Elephant herd in Ngorongoro Crater' },
-      { src: U('mYiFarnp-ko'), alt: 'Clouds over the Ngorongoro highlands' },
-    ],
-  },
-  tarangire: {
-    cover: U('AtYVjxDqlPI', 900),
-    hero: U('AtYVjxDqlPI', 1800),
-    gallery: [{ src: U('AtYVjxDqlPI'), alt: 'Elephant in Tarangire National Park' }],
-  },
-  // TODO: replace with real Nyerere photos (search "selous game reserve" on Unsplash).
-  nyerere: {
-    cover: U('IYMeU7G3L4E', 900),
-    hero: U('IYMeU7G3L4E', 1800),
-    gallery: [{ src: U('IYMeU7G3L4E'), alt: 'Wildlife in the southern safari circuit (placeholder)' }],
-  },
-};
-
-// ---------- Page-level images ----------
-export const pages = {
-  home: {
-    hero: U('H1THPgRuKg0', 1800),
-    story: U('FmUx8z_Tz4A', 1200),
-    cta: U('G4zORfstMW0', 1800),
-  },
-  destinations: { hero: U('ZaMYDt6FE58', 1800) },
-  experiences: { hero: U('IYMeU7G3L4E', 1800) },
-  safaris: { hero: U('ZaMYDt6FE58', 1800) },
-  kilimanjaro: { hero: U('DDEBAl7ULAo', 1800), alt: U('KDQ6D6V5RtM', 1200) },
-  zanzibar: { hero: U('VqxfYDgg8RQ', 1800), alt: U('nkLfKiCf3EQ', 1200) },
-  about: { hero: U('FmUx8z_Tz4A', 1800), team: U('46wm-yYcYEs', 1200) },
-  journal: { hero: U('mYiFarnp-ko', 1800) },
-  contact: { hero: U('G4zORfstMW0', 1800), side: U('AtYVjxDqlPI', 1000) },
-};
-
-// ---------- Cards ----------
-// Keys are suggestions: rename them to match the slugs/ids in your own data files.
-export const experiences = {
-  'game-drives': U('IYMeU7G3L4E', 800),
-  'great-migration': U('H1THPgRuKg0', 800),
-  'mountain-trekking': U('DDEBAl7ULAo', 800),
-  'beach-escapes': U('G4zORfstMW0', 800),
-  'culture-heritage': U('nkLfKiCf3EQ', 800),
-  'wildlife-photography': U('FmUx8z_Tz4A', 800),
-};
-
-export const journal = [
-  U('mYiFarnp-ko', 900),
-  U('3WsA4s8XAMI', 900),
-  U('KDQ6D6V5RtM', 900),
-];
-
-// Handy helper: pick an image for any slug, with a safe fallback.
-export const coverFor = (slug) => destinations[slug]?.cover ?? pages.home.hero;
+  home: { src: '', poster: U(ID.migration, 1600) },
+  safaris: { src: '', poster: U(ID.wildebeest, 1600) },
+  kilimanjaro: { src: '', poster: U(ID.kiliMoshi, 1600) },
+  zanzibar: { src: '', poster: U(ID.coast, 1600) },
+}

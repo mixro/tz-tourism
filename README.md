@@ -4,6 +4,10 @@
 
 ### Premium Tanzania Safari, Kilimanjaro & Zanzibar Experiences
 
+<a href="https://unsplash.com/photos/H1THPgRuKg0">
+  <img src="https://unsplash.com/photos/H1THPgRuKg0/download?force=true&w=1400" alt="Wildebeest crossing the Serengeti" width="100%" />
+</a>
+
 A modern, fully responsive tourism website showcasing handcrafted adventures across Tanzania, from the Serengeti plains to the summit of Kilimanjaro and the shores of Zanzibar.
 
 ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)
@@ -22,6 +26,7 @@ A modern, fully responsive tourism website showcasing handcrafted adventures acr
 
 - [Overview](#-overview)
 - [Features](#-features)
+- [Gallery](#-gallery)
 - [Tech Stack](#-tech-stack)
 - [Pages & Routes](#-pages--routes)
 - [Design System](#-design-system)
@@ -33,6 +38,7 @@ A modern, fully responsive tourism website showcasing handcrafted adventures acr
 - [Roadmap](#-roadmap)
 - [Contributing](#-contributing)
 - [License](#-license)
+- [Image Credits](#-image-credits)
 - [Contact](#-contact)
 
 ---
@@ -66,6 +72,73 @@ The site presents destinations, curated experiences, safari packages, and travel
 | **Motion & Polish** | Smooth page transitions and scroll animations powered by Framer Motion |
 | **Responsive Design** | Mobile-first layouts that adapt from phones to large desktops |
 | **Data-Driven Content** | Destinations, packages, and more live in plain data files for quick edits |
+
+---
+
+## 📸 Gallery
+
+A preview of the destinations featured on the site. Click any image to open the original photo.
+
+<table>
+  <tr>
+    <td width="33%" valign="top">
+      <a href="https://unsplash.com/photos/ZaMYDt6FE58"><img src="https://unsplash.com/photos/ZaMYDt6FE58/download?force=true&w=800" alt="Serengeti Migration" width="100%" /></a>
+      <br /><sub><b>Serengeti Migration</b><br />Photo by Doina Gavrilov</sub>
+    </td>
+    <td width="33%" valign="top">
+      <a href="https://unsplash.com/photos/IYMeU7G3L4E"><img src="https://unsplash.com/photos/IYMeU7G3L4E/download?force=true&w=800" alt="Serengeti Leopard" width="100%" /></a>
+      <br /><sub><b>Serengeti Leopard</b><br />Photo by Crystal McClernon</sub>
+    </td>
+    <td width="33%" valign="top">
+      <a href="https://unsplash.com/photos/FmUx8z_Tz4A"><img src="https://unsplash.com/photos/FmUx8z_Tz4A/download?force=true&w=800" alt="Serengeti Elephants" width="100%" /></a>
+      <br /><sub><b>Serengeti Elephants</b><br />Photo by Dawn Westveld</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%" valign="top">
+      <a href="https://unsplash.com/photos/DDEBAl7ULAo"><img src="https://unsplash.com/photos/DDEBAl7ULAo/download?force=true&w=800" alt="Kilimanjaro, Rongai Route" width="100%" /></a>
+      <br /><sub><b>Kilimanjaro, Rongai Route</b><br />Photo by Crispin Jones</sub>
+    </td>
+    <td width="33%" valign="top">
+      <a href="https://unsplash.com/photos/KDQ6D6V5RtM"><img src="https://unsplash.com/photos/KDQ6D6V5RtM/download?force=true&w=800" alt="Kilimanjaro from Moshi" width="100%" /></a>
+      <br /><sub><b>Kilimanjaro from Moshi</b><br />Photo by Twende Africa Tours</sub>
+    </td>
+    <td width="33%" valign="top">
+      <a href="https://unsplash.com/photos/Y2fRDPQyAj4"><img src="https://unsplash.com/photos/Y2fRDPQyAj4/download?force=true&w=800" alt="Serengeti Gazelle" width="100%" /></a>
+      <br /><sub><b>Serengeti Gazelle</b><br />Photo by Olaf Janssen</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%" valign="top">
+      <a href="https://unsplash.com/photos/VqxfYDgg8RQ"><img src="https://unsplash.com/photos/VqxfYDgg8RQ/download?force=true&w=800" alt="Zanzibar Coastline" width="100%" /></a>
+      <br /><sub><b>Zanzibar Coastline</b><br />Photo by Alexander Osipenko</sub>
+    </td>
+    <td width="33%" valign="top">
+      <a href="https://unsplash.com/photos/G4zORfstMW0"><img src="https://unsplash.com/photos/G4zORfstMW0/download?force=true&w=800" alt="Zanzibar Beach Retreat" width="100%" /></a>
+      <br /><sub><b>Zanzibar Beach Retreat</b><br />Photo by Danai Tsoutreli</sub>
+    </td>
+    <td width="33%" valign="top">
+      <a href="https://unsplash.com/photos/nkLfKiCf3EQ"><img src="https://unsplash.com/photos/nkLfKiCf3EQ/download?force=true&w=800" alt="Stone Town, Zanzibar" width="100%" /></a>
+      <br /><sub><b>Stone Town, Zanzibar</b><br />Photo by Javi Lorbada</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%" valign="top">
+      <a href="https://unsplash.com/photos/46wm-yYcYEs"><img src="https://unsplash.com/photos/46wm-yYcYEs/download?force=true&w=800" alt="Ngorongoro Crater Elephants" width="100%" /></a>
+      <br /><sub><b>Ngorongoro Crater Elephants</b><br />Photo by Michael Wilcox</sub>
+    </td>
+    <td width="33%" valign="top">
+      <a href="https://unsplash.com/photos/mYiFarnp-ko"><img src="https://unsplash.com/photos/mYiFarnp-ko/download?force=true&w=800" alt="Ngorongoro Highlands" width="100%" /></a>
+      <br /><sub><b>Ngorongoro Highlands</b><br />Photo by Mariola Grobelska</sub>
+    </td>
+    <td width="33%" valign="top">
+      <a href="https://unsplash.com/photos/AtYVjxDqlPI"><img src="https://unsplash.com/photos/AtYVjxDqlPI/download?force=true&w=800" alt="Tarangire Elephant" width="100%" /></a>
+      <br /><sub><b>Tarangire Elephant</b><br />Photo by Davia Breitenmoser</sub>
+    </td>
+  </tr>
+</table>
+
+> **Demonstration project:** all imagery is sourced online from [Unsplash](https://unsplash.com/) for demo purposes only. Browse more: [Tarangire](https://unsplash.com/s/photos/tarangire) · [Nyerere / Selous](https://unsplash.com/s/photos/selous-game-reserve) · [Serengeti](https://unsplash.com/s/photos/serengeti)
 
 ---
 
@@ -238,6 +311,16 @@ Contributions, issues, and feature requests are welcome.
 Distributed under the **MIT License**. See `LICENSE` for details.
 
 > Replace this section if the project uses a different license or is proprietary.
+
+---
+
+## 🖼 Image Credits
+
+This is a non-commercial demonstration website. Photographs are provided by the photographers below via [Unsplash](https://unsplash.com/) and used under the [Unsplash License](https://unsplash.com/license). Thank you to:
+
+Doina Gavrilov · Crystal McClernon · Dawn Westveld · Uzuri Safaris Tanzania · Crispin Jones · Twende Africa Tours · Olaf Janssen · Alexander Osipenko · Danai Tsoutreli · Javi Lorbada · Michael Wilcox · Mariola Grobelska · Davia Breitenmoser
+
+> Before any commercial launch, replace these with your own licensed or original photography.
 
 ---
 

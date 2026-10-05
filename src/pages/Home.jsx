@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import PageHero from '../components/PageHero';
+import MediaImage from '../components/MediaImage';
+import { pages, videos, coverFor } from '../data/media';
 import { ArrowRight, ArrowDown, Compass, Sparkles, Leaf, Handshake, MapPin, Quote } from 'lucide-react'
 import { Btn, Heading, Img, ParallaxImg, Reveal, Wrap, useSEO } from '../components/ui.jsx'
 import { destinations } from '../data/destinations.js'
